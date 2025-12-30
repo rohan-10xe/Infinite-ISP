@@ -1,5 +1,5 @@
 platform:
-  filename: "ColorChecker_2592x1536_12bits_RGGB.raw"
+  filename: "file1.raw"
   disable_progress_bar: false
   leave_pbar_string: false
   render_3a: false
@@ -9,7 +9,7 @@ platform:
 sensor_info:
   bayer_pattern: "rggb"
   range: 1023
-  bit_depth: 12
+  bit_depth: 10
   width: 2592
   height: 1536
 
@@ -27,16 +27,16 @@ dead_pixel_correction:
   is_save: false
 
 black_level_correction:
-  is_enable: true
+  is_enable: false
   r_offset: 200
   gr_offset: 200
   gb_offset: 200
   b_offset: 200
   is_linear: true
-  r_sat: 4095
-  gr_sat: 4095
-  gb_sat: 4095
-  b_sat: 4095
+  r_sat: 1023
+  gr_sat: 1023
+  gb_sat: 1023
+  b_sat: 1023
   is_save: false
 
 oecf:
@@ -47,7 +47,7 @@ oecf:
   is_save: false
 
 digital_gain:
-  is_debug: true
+  is_debug: false
   is_auto: true
   # Array of pre-define Gains
   gain_array: [1, 2, 4, 6, 8, 10, 12, 16, 32, 64]
@@ -61,7 +61,7 @@ lens_shading_correction:
   is_save: false
 
 bayer_noise_reduction:
-  is_enable: true
+  is_enable: false
   filter_window: 9
   r_std_dev_s: 1
   r_std_dev_r: 0.1
@@ -72,7 +72,7 @@ bayer_noise_reduction:
   is_save: false
 
 auto_white_balance:
-  is_enable: true
+  is_enable: false
   is_debug: true
   underexposed_percentage: 5
   overexposed_percentage: 5
@@ -81,7 +81,7 @@ auto_white_balance:
   percentage: 3.5 # pca
 
 white_balance:
-  is_enable: true
+  is_enable: false
   # is_auto refers to auto white balance module
   is_debug: true
   is_auto: true
@@ -90,18 +90,18 @@ white_balance:
   is_save: false
 
 demosaic:
-  is_save: false
+  is_save: true
 
 color_correction_matrix:
   #Row sum to 1 convention
-  is_enable: true
+  is_enable: false
   corrected_red: [1.660, -0.527, -0.133]
   corrected_green: [-0.408, 1.563, -0.082]
   corrected_blue: [-0.055, -1.641, 2.695]
   is_save: false
 
 gamma_correction:
-  is_enable: true
+  is_enable: false
   # 8-bit
   gamma_lut_8: [0, 5, 9, 13, 17, 22, 25, 29, 33, 37, 40, 44, 47, 50, 54, 57, 60, 63, 66, 69, 72, 75, 78, 80, 83, 85, 88, 90, 93, 95, 97, 99, 101, 103, 105, 107, 109, 111, 113, 115, 117, 118, 120, 122, 123, 125, 126, 128, 129, 131, 132, 134, 135, 136, 138, 139, 140, 141, 142, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 162, 163, 164, 165, 166, 167, 167, 168, 169, 170, 171, 171, 172, 173, 173, 174, 175, 176, 176, 177, 178, 179, 179, 180, 181, 181, 182, 183, 183, 184, 185, 185, 186, 187, 187, 188, 188, 189, 190, 190, 191, 191, 192, 193, 193, 194, 194, 195, 195, 196, 197, 197, 198, 198, 199, 199, 200, 200, 201, 201, 202, 202, 203, 203, 204, 204, 205, 205, 206, 206, 207, 207, 208, 208, 209, 209, 210, 210, 211, 211, 212, 212, 213, 213, 214, 214, 215, 215, 216, 216, 217, 217, 218, 218, 219, 219, 220, 220, 221, 221, 221, 222, 222, 223, 223, 224, 224, 225, 225, 225, 226, 226, 227, 227, 228, 228, 228, 229, 229, 230, 230, 231, 231, 231, 232, 232, 233, 233, 234, 234, 234, 235, 235, 236, 236, 237, 237, 238, 238, 238, 239, 239, 240, 240, 241, 241, 241, 242, 242, 243, 243, 244, 244, 244, 245, 245, 246, 246, 247, 247, 247, 248, 248, 249, 249, 250, 250, 250, 251, 251, 252, 252, 252, 253, 253, 254, 254, 255]
   # 10-bit
@@ -126,7 +126,7 @@ color_space_conversion:
   is_save: false
 
 color_saturation_enhancement:
-  is_enable: true
+  is_enable: false
   saturation_gain: 1.5
 
 
@@ -137,13 +137,13 @@ ldci:
   is_save: false
 
 sharpen:
-  is_enable: true
+  is_enable: false
   sharpen_sigma: 5
   sharpen_strength: 1
   is_save: false
 
 2d_noise_reduction:
-  is_enable: true
+  is_enable: false
   # nlm
   window_size: 9
   patch_size: 5
